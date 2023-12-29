@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { 
+  playC4,
+  playDb4,
+  playD4,
+  playEb4,
+  playE4,
+  playF4,
+  playGb4,
+  playG4,
+  playAb4,
+  playA4,
+  playBb4,
+  playB4,
+  playC5,
+  playNote,
+ } from './tone.fn.jsx'
+
+window.addEventListener('keydown' ,playNote)
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+   
+      <div className='pianoPage'>
+        <h1>Piano</h1>
+        <div className='piano'>
+          <div className='white-key' onClick={playC4}>C</div>
+          <div className='black-key' onClick={playDb4}>Db</div>
+          <div className='white-key' onClick={playD4}>D</div>
+          <div className='black-key' onClick={playEb4}>Eb</div>
+          <div className='white-key' onClick={playE4}>E</div>
+          <div className='white-key' onClick={playF4}>F</div>
+          <div className='black-key' onClick={playGb4}>Gb</div>
+          <div className='white-key' onClick={playG4}>G</div>
+          <div className='black-key' onClick={playAb4}>Ab</div>
+          <div className='white-key' onClick={playA4}>A</div>
+          <div className='black-key' onClick={playBb4}>Bb</div>
+          <div className='white-key' onClick={playB4}>B</div>
+          <div className='white-key' onClick={playC5}>C</div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
 }
 
 export default App
